@@ -65,11 +65,11 @@ public class MetersAPI extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//sending values to insert function
-		String output = meterObj.insertMeter(	request.getParameter("meterCode"),
-											request.getParameter("houseownerName"),
-											request.getParameter("singleUnitPrice"),
-											request.getParameter("unitsAmount"));
-                                            request.getParameter("totalPrice");
+		String output = meterObj.insertMeter(request.getParameter("meterCode"),
+											 request.getParameter("houseownerName"),
+											 request.getParameter("singleUnitPrice"),
+											 request.getParameter("unitsAmount"));
+                                             request.getParameter("totalPrice");
 											
 		//sending the output to client
 		response.getWriter().write(output);
@@ -83,12 +83,12 @@ public class MetersAPI extends HttpServlet {
 		Map paras = getParasMap(request);
 
 		//getting values from the map and sending to update function
-		String output = meterObj.updateMeter(	paras.get("hidMeterIDSave").toString(),
-											paras.get("meterCode").toString(),
-											paras.get("houseownerName").toString(),
-											paras.get("singleUnitPrice").toString(),
-											paras.get("unitsAmount").toString());
-                                            paras.get("totalPrice").toString();
+		String output = meterObj.updateMeter(paras.get("hidMeterIDSave").toString(),
+											 paras.get("meterCode").toString(),
+											 paras.get("houseownerName").toString(),
+											 paras.get("singleUnitPrice").toString(),
+											 paras.get("unitsAmount").toString());
+                                             paras.get("totalPrice").toString();
 		
 		//sending the output to client
 		response.getWriter().write(output);
